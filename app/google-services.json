@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "130474242228",
+    "firebase_url": "https://firbase-implementation-1507.firebaseio.com",
+    "project_id": "firbase-implementation-1507",
+    "storage_bucket": "firbase-implementation-1507.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:130474242228:android:0dc39969064d3c88",
+        "android_client_info": {
+          "package_name": "practice.module.com.firebaseimplementation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "130474242228-d428iqjq6a0gtmutevud5s6es8q69304.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEVkiVFhTYBqP7TLpgZLjqRxBflWhtNto"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
