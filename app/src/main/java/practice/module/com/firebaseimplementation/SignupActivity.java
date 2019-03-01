@@ -18,7 +18,7 @@ import com.google.firebase.auth.*;
 public class SignupActivity extends AppCompatActivity {
 
     private EditText signUpEmail,signUpPassword;
-    private Button btnSignIn,btnSignUp,btnResetPassword;
+    private Button btnLinkLogin,btnSignUp,btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
 
@@ -30,7 +30,7 @@ public class SignupActivity extends AppCompatActivity {
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
-        btnSignIn = findViewById(R.id.signin_button);
+        btnLinkLogin = findViewById(R.id.link_login_button);
         btnSignUp = findViewById(R.id.signup_button);
         signUpEmail = findViewById(R.id.signup_email);
         signUpPassword = findViewById(R.id.signup_password);
@@ -41,11 +41,11 @@ public class SignupActivity extends AppCompatActivity {
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(SignupActivity.this,ResetPasswordActivity.class));
+                startActivity(new Intent(SignupActivity.this,ResetActivity.class));
             }
         });
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        btnLinkLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

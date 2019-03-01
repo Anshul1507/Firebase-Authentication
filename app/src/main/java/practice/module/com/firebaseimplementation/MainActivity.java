@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //Get Firebase auth instance
+//        auth = FirebaseAuth.getInstance();
+//        if(auth.getCurrentUser() != null){
+//            startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+//            finish();
+//            Toast.makeText(this, "Signed up", Toast.LENGTH_SHORT).show();
+//        }
+        //set the view now
         setContentView(R.layout.activity_main);
 
         login_email = findViewById(R.id.input_email);
@@ -36,21 +45,17 @@ public class MainActivity extends AppCompatActivity {
         signUpText = findViewById(R.id.create_account);
         progressBar = findViewById(R.id.login_progress);
 
-
+        //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),SignupActivity.class));
-                finish();
             }
         });
 
-        if(auth.getCurrentUser() != null){
-//            startActivity(new Intent(MainActivity.this, Toast.makeText()));
-            Toast.makeText(this, "Signed up", Toast.LENGTH_SHORT).show();
-        }
+
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,7 +88,13 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
                                 else{
-//                                    startActivity(new Intent());
+                                    startActivity(new Intent(MainActivity.this, DashboardActivity.class));
+                                    login_password.setText("");
+                                    login_email.setText("");
+                                    //pressing signout button is not proper functioning and we have to activate finish(); here for
+                                    // finish the login screen on success login and if we apply finish(); here then pressing on signout, app crashes
+                                    
+
                                     Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
                                 }
                             }
